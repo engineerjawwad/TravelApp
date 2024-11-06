@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask cache files
+instance/
+.cache/
+*.egg-info/
+
+# Environment variables
+.env
+*.env
+
+# Virtual environment
+venv/
+ENV/
+env/
+
+# Logs and other runtime files
+*.log
+*.out
+*.pid
+
+# SQLite database files (if using SQLite for local testing)
+*.sqlite3
+*.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS specific
+.DS_Store
+
+# Node.js dependencies (if using npm for frontend)
+node_modules/
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Python egg and build files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+lib/
+lib64/
+pip-log.txt
+develop-eggs/
+.installed.cfg

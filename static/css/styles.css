@@ -1,0 +1,374 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(30, 144, 255, 0.9);
+    padding: 10px 20px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+.header nav ul li a:hover {
+    color: #ffdd57;
+}
+.cta {
+    background-color: #ffdd57;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.cta:hover {
+    background-color: #ffbb22;
+}
+.search-section {
+    text-align: center;
+    padding: 25px 20px; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/heroimage.jpg');
+    background-size: cover;
+    color: #fff;
+}
+.search-section h2 {
+    margin-bottom: 15px;
+    font-size: 2rem; 
+}
+.search-section form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.search-section form input, .search-section form button {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.search-section form button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.search-section form button:hover {
+    background-color: #ffdd57;
+}
+.carousel-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+.carousel-item {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(87, 9, 9, 0.484);
+    text-align: center;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+}
+.carousel-item:hover {
+    transform: translateY(-5px);
+}
+.carousel-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+.carousel-item h3, .carousel-item p {
+    padding: 10px;
+}
+
+.testimonials {
+    padding: 25px 20px; 
+    background-color: #1e90ff;
+    color: #fff;
+    text-align: center;
+}
+.testimonials h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem; 
+}
+.testimonial-card {
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 250px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+.carousel-button, .testimonial-button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+.login-button {
+    background-color: #ffdd57; 
+    color: #adf040;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #ffbb22;
+}
+.flights-section {
+    padding: 40px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+.flight-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s;
+}
+.flight-card:hover {
+    transform: translateY(-5px);
+}
+.flight-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+.flight-card p {
+    margin: 5px 0;
+}
+.flight-card button {
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.flight-card button:hover {
+    background-color: #ffdd57;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+footer {
+    background-color: #737980;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: auto; 
+}
+
+.hotels-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+.hotels-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+.hotels-section p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+.hotel-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.hotel-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(87, 9, 9, 0.484);
+    text-align: center;
+    padding: 15px;
+    max-width: 250px;
+    transition: transform 0.3s;
+}
+.hotel-card:hover {
+    transform: translateY(-5px);
+}
+.hotel-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.hotel-card button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.hotel-card button:hover {
+    background-color: #ffdd57;
+}
+.signup-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signup-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup-section button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.signup-section button:hover {
+    background-color: #ffdd57;
+}
+
+.carousel-button:hover, .testimonial-button:hover {
+    background-color: #ffdd57;
+}
+
+.login-section {
+    padding: 60px 30px;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+.login-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+.login-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 300px;
+}
+.login-section form input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.login-section form button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.login-section form button:hover {
+    background-color: #ffdd57;
+}
+.message {
+    margin-top: 15px;
+    font-size: 1rem;
+}

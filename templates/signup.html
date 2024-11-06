@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Travel Booking</title>
+    <link rel="stylesheet" href="static\css\styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">TravelBook</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('flights') }}">Flights</a></li>
+                <li><a href="{{ url_for('hotels') }}">Hotels</a></li>
+                <li><a href="{{ url_for('trains') }}">Trains</a></li>
+                <li><a href="{{ url_for('login') }}" class="login-button">Login</a></li>
+                <li><a href="{{ url_for('signup') }}" class="cta">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sign Up Section -->
+    <section class="signup-section">
+        <h2>Create Your Account</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 TravelBook. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const email = document.getElementById("email").value;
+    
+                if (!username || !password || !email) {
+                    alert("Please fill in all fields.");
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

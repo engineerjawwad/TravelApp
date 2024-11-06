@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">TravelBook</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('flights') }}">Flights</a></li>
+                <li><a href="{{ url_for('hotels') }}">Hotels</a></li>
+                <li><a href="{{ url_for('trains') }}">Trains</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('signup') }}" class="cta">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <h2>Book Your Next Adventure</h2>
+        <form action="{{ url_for('flights') }}" method="GET">
+            <input type="text" name="destination" id="destination" placeholder="Where to?" required>
+            <label for="departure_date">Departure Date</label>
+            <input type="date" name="departure_date" id="departure_date" required>
+            <label for="return_date">Return Date</label>
+            <input type="date" name="return_date" id="return_date">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section class="carousel-section">
+        <h2>Featured Destinations</h2>
+        <div class="carousel">
+            <div class="carousel-item"><img src="{{ url_for('static', filename='images/paris.jpg') }}" alt="Paris"><h3>Paris</h3><p>From $499</p></div>
+            <div class="carousel-item"><img src="{{ url_for('static', filename='images/newyork.jpg') }}" alt="New York"><h3>New York</h3><p>From $599</p></div>
+            <div class="carousel-item"><img src="{{ url_for('static', filename='images/Dubai.jpg') }}" alt="Dubai"><h3>Dubai</h3><p>From $399</p></div>
+            <div class="carousel-item"><img src="{{ url_for('static', filename='images/frankfurt.jpg') }}" alt="Frankfurt"><h3>Frankfurt</h3><p>From $699</p></div>
+            <div class="carousel-item"><img src="{{ url_for('static', filename='images/Delhi.jpg') }}" alt="Delhi"><h3>Delhi</h3><p>From $899</p></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Travelers Say</h2>
+        <div class="testimonial-card">“Best travel experience ever!” - Lal</div>
+        <div class="testimonial-card">“Affordable prices and great support.” - Selina</div>
+        <div class="testimonial-card">“Easy to book, will use again!” - Mohamad</div>
+    </section>
+
+    <footer>
+        <p>© 2024 TravelBook. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

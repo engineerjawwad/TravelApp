@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Travel Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">TravelBook</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('flights') }}">Flights</a></li>
+                <li><a href="{{ url_for('hotels') }}">Hotels</a></li>
+                <li><a href="{{ url_for('trains') }}">Trains</a></li>
+                <li><a href="{{ url_for('login') }}" class="login-button">Login</a></li>
+                <li><a href="{{ url_for('signup') }}" class="cta">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="search-section">
+        <h2>Find Your Flight</h2>
+        <form action="{{ url_for('flights') }}" method="GET">
+            <input type="text" name="departure" placeholder="Departure City">
+            <input type="text" name="arrival" placeholder="Arrival City">
+            <input type="date" name="departure_date">
+            <input type="date" name="return_date">
+            <button type="submit">Search Flights</button>
+        </form>
+    </section>
+
+    <section class="flights-section">
+        <h2>Available Flights</h2>
+        <div class="flight-list">
+            {% if flights %}
+                {% for flight in flights %}
+                <div class="flight-card">
+                    <h3>Flight</h3>
+                    <p><strong>From:</strong> {{ flight.departure_city }}</p>
+                    <p><strong>To:</strong> {{ flight.destination }}</p>
+                    <p><strong>Departure:</strong> {{ flight.departure_date }}</p>
+                    <p><strong>Return:</strong> {{ flight.return_date }}</p>
+                    <p><strong>Price:</strong> ${{ flight.price }}</p>
+                    <button>Book Now</button>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No flights available for the selected criteria.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 TravelBook. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
