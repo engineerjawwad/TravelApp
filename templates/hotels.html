@@ -23,15 +23,21 @@
 
     <section class="hotels-section">
         <h2>Find Your Perfect Stay</h2>
-        <p>Explore our top hotel options in your favorite destinations.</p>
+        <form action="{{ url_for('hotels') }}" method="POST">
+            <input type="text" name="city_code" placeholder="City Code (e.g., PAR for Paris)" required>
+            <input type="text" name="check_in_date" placeholder="Check-in Date (dd/mm/yyyy)" required>
+            <input type="text" name="check_out_date" placeholder="Check-out Date (dd/mm/yyyy)" required>
+            <button type="submit">Search Hotels</button>
+        </form>
+    
         <div class="hotel-list">
             {% if hotels %}
                 {% for hotel in hotels %}
                 <div class="hotel-card">
-                    <img src="{{ url_for('static', filename=hotel.image) }}" alt="{{ hotel.name }}">
-                    <h3>{{ hotel.name }}</h3>
-                    <p>From ${{ hotel.price }}/night</p>
-                    <form action="{{ url_for('book_hotel', hotel_id=hotel.id) }}" method="POST">
+                    <img src="{{ hotel.hotel.image }}" alt="{{ hotel.hotel.name }}">
+                    <h3>{{ hotel.hotel.name }}</h3>
+                    <p>From ${{ hotel.offers[0].price.total }}/night</p>
+                    <form action="{{ url_for('book_hotel', hotel_id=hotel.hotel.hotelId) }}" method="POST">
                         <button type="submit">Book Now</button>
                     </form>
                 </div>
@@ -41,6 +47,7 @@
             {% endif %}
         </div>
     </section>
+    
 
     <footer>
         <p>© 2024 TravelBook. All rights reserved.</p>
